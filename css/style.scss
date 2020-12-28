@@ -1,0 +1,224 @@
+$headerfont: 'Raleway',
+sans-serif;
+$mainfont: 'Roboto',
+sans-serif;
+$brandcolor: #c4a7da;
+$bodycolor: rgb(1, 7, 7);
+$accentcolor: #C62A88;
+$primary-color: #03C4A1;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font: 100% $mainfont;
+    background-color: $bodycolor;
+    color: #03C4A1;
+    font-weight: 600;
+    font-size: large;
+}
+
+a {
+    color: $brandcolor;
+    border-bottom: $accentcolor;
+}
+
+a:hover {
+    color: $accentcolor;
+    border-bottom: $brandcolor;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $headerfont;
+}
+
+.pagegrid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: auto 1fr 80px;
+    grid-template-areas:
+        "heroimage header header"
+        "heroimage   content   signupmenu"
+        "heroimage footer footer";
+    min-height: 100vh;
+    // border: #03C4A1 2px solid;
+}
+
+.content {
+    grid-area: content;
+}
+
+.header {
+    grid-area: header;
+    // border: red 2px solid;
+}
+
+.signupmenu {
+    display: grid;
+    place-items: center;
+    grid-area: signupmenu;
+    z-index: 5;
+}
+.signupform {
+    z-index: 5;
+    background-color: rgba(1, 7, 7, 0.6);;
+    padding: 1em;
+    border-radius: 10px;    
+}
+.content {
+    grid-area: content;
+    display: grid;
+    place-items: center;
+}
+
+.heroimage {
+    grid-area: heroimage;
+    background-image: url(/images/pexels-cottonbro-4752861.jpg);
+    background-size: cover;
+    background-position: center;
+    // border: palegoldenrod 2px solid;
+}
+
+.pagefooter {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    grid-area: footer;
+    background-color: rgba(3, 196, 161, 0.5);
+    // border: #03C4A1 2px solid;
+}
+
+h2,
+h3,
+h4 {
+    margin: auto auto 1em auto;
+    margin-left: 5%;
+}
+
+h1 {
+    font-size: 7em;
+    position: relative;
+    left: -10%;
+    border-left: $accentcolor 10px solid;
+}
+
+h2,
+h3 {
+    color: $brandcolor;
+}
+
+li {
+    margin-left: 10%;
+    padding: 2%;
+}
+
+.premium {
+    color: $primary-color;
+}
+
+.premiumspan {
+    color: $accentcolor;
+    text-decoration: $accentcolor;
+    font-size: 0.8em;
+}
+
+.centercontent {
+    
+    display: grid;
+    place-items: center;
+    border: $accentcolor 2px solid;
+}
+
+form {
+    margin: 1em;
+}
+
+input {
+    margin-bottom: 0.5em;
+}
+
+label {
+    margin: 0;
+    font-size: 0.8em;
+}
+
+@media only screen and (max-width: 1345px) {
+
+    /* For mobile phones: */
+    body {
+        background-color: $bodycolor;
+    }
+
+    h1 {
+        font-size: 6em;
+    }
+}
+
+@media only screen and (max-width: 1128px) {
+
+    // smaller screens 
+    body {
+        background-color: $bodycolor;
+    }
+
+    .pagegrid {
+        display: grid;
+        grid-template-rows: auto 100vh auto auto;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "header"
+            "heroimage"
+            "content"
+            "signupmenu"
+            "footer";
+        min-height: 100vh;
+        // border: #03C4A1 2px solid;
+    }
+    .centercontent {
+        margin: 1em;    
+    }
+    .signupmenu {
+        grid-area: heroimage;
+        display: grid;
+        place-items: end;
+    }
+
+    h1 {
+        font-size: 5em;
+        left: 0;
+    }
+
+    .header {
+        grid-area: header;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    h1 {
+        font-size: 3em;
+    }
+
+    body {
+        background-color: $bodycolor;
+
+    }
+}
+
+@media only screen and (max-width: 690px) {
+
+    /* For mobile phones: */
+    h1 {
+        font-size: 3em;
+    }
+
+    body {
+        background-color: $bodycolor;
+
+    }
+}
