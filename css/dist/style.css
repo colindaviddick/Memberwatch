@@ -41,6 +41,7 @@ h3 {
 
 .header {
   grid-area: header;
+  overflow: visible;
 }
 
 .signupmenu {
@@ -94,6 +95,7 @@ h1 {
 
 h2,
 h3 {
+  position: relative;
   color: #c4a7da;
 }
 
@@ -148,7 +150,7 @@ label {
 
   .pagegrid {
     display: grid;
-    grid-template-rows: auto 100vh auto auto;
+    grid-template-rows: 0px 100vh auto auto;
     grid-template-columns: 100%;
     grid-template-areas: "header" "heroimage" "content" "signupmenu" "footer";
     min-height: 100vh;
@@ -167,6 +169,16 @@ label {
   h1 {
     font-size: 5em;
     left: 0;
+    z-index: 5;
+  }
+
+  h1, h2 {
+    background-color: rgba(1, 7, 7, 0.6);
+    z-index: 5;
+  }
+
+  h2 {
+    padding-top: 1em;
   }
 
   .header {
